@@ -1,4 +1,24 @@
 $(document).ready(function(){
+    $('#the-form').submit(function(e){
+        e.preventDefault();
+    var str = $('#email').val();
+    console.log(str);
+
+    var lower = str.toLowerCase();
+    console.log(lower);
+    var test = $.trim(lower);
+    console.log(test);
+
+    var avatar = MD5(test);
+    console.log(avatar);
+    
+    var mylink = 'http://www.gravatar.com/avatar/' + avatar + '?s=256';
+    console.log(mylink);
+
+    $('#avatar').attr('src', mylink);
+    });
+
+
 
   // Your code goes here
   // When someone types in an email in the input, replace the image with that person's gravatar
